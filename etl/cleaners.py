@@ -21,7 +21,8 @@ def encoder_labels(df: pd.DataFrame, col):
 
 def to_numerical(df: pd.DataFrame):
     l_cols = [col for col in df.columns if df[col].dtype == 'O']
-    col_to_datetime(df, l_cols[0])
-    encoder_labels(df, l_cols[1])
-
+    if len(l_cols) > 0:
+        col_to_datetime(df, l_cols[0])
+        encoder_labels(df, l_cols[1])
+    return df
 
