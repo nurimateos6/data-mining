@@ -1,0 +1,12 @@
+name: CI
+on:
+  push:
+    branches:
+      [features/development]
+
+jobs:
+  load_data:
+      runs-on: macos-latest
+      steps:
+        - name: 'Check out repository'
+          uses: actions/checkout@v2
