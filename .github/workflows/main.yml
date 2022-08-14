@@ -1,4 +1,4 @@
-name: CI
+name: MLOps for Data Mining
 on:
   push:
     branches:
@@ -6,7 +6,12 @@ on:
 
 jobs:
   load_data:
-      runs-on: macos-latest
+      runs-on: [macos-latest]
       steps:
         - name: 'Check out repository'
           uses: actions/checkout@v2
+          env:
+            repo_token: ${{ secrets.GITHUB_TOKEN}}
+          run:
+            pip install -r requirements.txt
+            python data/load_data.py
