@@ -11,7 +11,8 @@ jobs:
         - name: 'Check out repository'
           run:
             pip install -r requirements.txt
-            python 'data/load_data.py'
+            cd data
+            python load_data.py
           env:
             repo_token: ${{ secrets.GITHUB_TOKEN}}
 
