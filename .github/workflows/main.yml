@@ -5,16 +5,13 @@ on:
       [features/development]
 
 jobs:
-  install_requirements:
     runs-on: [macos-latest]
     steps:
       - name: 'Installing requirements'
-        run:
+        run: |
+          python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-  load_data:
-    runs-on: [macos-latest]
-    steps:
       - name: 'Load data'
         run:
           cd data
