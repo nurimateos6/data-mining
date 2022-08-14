@@ -11,8 +11,6 @@ jobs:
       - name: 'Installing requirements'
         run:
           pip install -r requirements.txt
-          env:
-            repo_token: ${{ secrets.GITHUB_TOKEN}}
 
   load_data:
     runs-on: [macos-latest]
@@ -21,5 +19,6 @@ jobs:
         run:
           cd data
           python load_data.py
-
+          #env:
+          #  repo_token: ${{ secrets.GITHUB_TOKEN}}
 
