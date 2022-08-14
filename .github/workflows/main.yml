@@ -5,14 +5,21 @@ on:
       [features/development]
 
 jobs:
-  load_data:
-      runs-on: [macos-latest]
-      steps:
-        - name: 'Check out repository'
-          run:
-            pip install -r requirements.txt
-            cd data
-            python load_data.py
+  install_requirements:
+    runs-on: [macos-latest]
+    steps:
+      - name: 'Installing requirements'
+        run:
+          pip install -r requirements.txt
           env:
             repo_token: ${{ secrets.GITHUB_TOKEN}}
+
+  load_data:
+    runs-on: [macos-latest]
+    steps:
+      - name: 'Load data'
+        run:
+          cd data
+          python load_data.py
+
 
