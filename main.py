@@ -4,7 +4,6 @@ from model.logistic_regression import logistic_regression
 from model.svm import svm
 from model.random_forest import rf
 from model.nn import mlp
-features/development
 import sys
 
 
