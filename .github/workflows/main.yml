@@ -14,17 +14,6 @@ jobs:
           run: |
             python -m pip install --upgrade pip
             pip install -r requirements.txt
-        - name: 'Load data'
+        - name: 'Run ML pipeline'
           run: |
-            cd data
-            python load_data.py
-            #env:
-            #  repo_token: ${{ secrets.GITHUB_TOKEN}}
-        - name: 'Split data'
-          run: |
-            cd data
-            python load_data.py
-            cd ..
-            cd featuring
-            python split_data.py
-  
+            python main.py --run_all
