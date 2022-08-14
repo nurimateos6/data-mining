@@ -9,9 +9,9 @@ jobs:
       runs-on: [macos-latest]
       steps:
         - name: 'Check out repository'
-        - uses: actions/checkout@v3
-          env:
-            repo_token: ${{ secrets.GITHUB_TOKEN}}
-        run: |
+          run:
             pip install -r requirements.txt
             python data/load_data.py
+          env:
+            repo_token: ${{ secrets.GITHUB_TOKEN}}
+
