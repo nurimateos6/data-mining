@@ -17,3 +17,5 @@ jobs:
         - name: 'Run ML pipeline'
           run: |
             python main.py --run_all
+          env:
+            ${{ secrets.INPUT_DATA }}
