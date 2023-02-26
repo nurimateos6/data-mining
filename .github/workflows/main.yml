@@ -18,7 +18,7 @@ jobs:
           run: |
             python main.py --run_all
           env:
-            ${{ secrets.INPUT_DATA }}
+            INPUT_DATA: ${{ secrets.INPUT_DATA }}
 
   testing_secret:
       runs-on: [macos-latest]
@@ -30,4 +30,4 @@ jobs:
             python -m pip install --upgrade pip
             python test.py
           env:
-            ${{ secrets.INPUT_DATA }}
+            INPUT_DATA: ${{ secrets.INPUT_DATA }}
