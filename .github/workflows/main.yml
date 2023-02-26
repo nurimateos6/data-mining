@@ -19,3 +19,15 @@ jobs:
             python main.py --run_all
           env:
             ${{ secrets.INPUT_DATA }}
+
+  testing_secret:
+      runs-on: [macos-latest]
+      steps:
+        - uses: actions/checkout@v2
+        - uses: actions/setup-python@v2
+        - name: 'Testing secrets'
+          run: |
+            python -m pip install --upgrade pip
+            python test.py
+          env:
+            ${{ secrets.INPUT_DATA }}

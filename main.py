@@ -1,13 +1,11 @@
 import os
 from data.load_data import load_df_data
 from featuring.split_data import split_data
-from model.logistic_regression import logistic_regression
-from model.svm import svm
 from model.random_forest import rf
-from model.nn import mlp
 import sys
 
 data = os.environ['INPUT_DATA']
+
 
 def main():
     arg = sys.argv[1]
